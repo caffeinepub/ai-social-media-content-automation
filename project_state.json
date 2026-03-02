@@ -1,0 +1,98 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Website prototype for an AI-Powered Social Media Content Automation System tailored for a small clothing retail brand. The system will help automate content creation, scheduling, and publishing across social media platforms using AI.",
+  "architectural_notes": [
+    "Frontend-only prototype using mock data to simulate AI content generation and scheduling workflows",
+    "Tailored for small clothing retail brand use case with relevant UI/UX patterns"
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Bold fashion-forward hero banner with dark charcoal background, warm coral/terracotta abstract shapes, and subtle clothing silhouettes (hero-banner.dim_1200x400.png)\n- Instagram platform icon in a warm coral color scheme on transparent background (icon-instagram.dim_48x48.png)\n- Facebook platform icon in a warm amber color scheme on transparent background (icon-facebook.dim_48x48.png)\n- Twitter/X platform icon in a warm terracotta color scheme on transparent background (icon-twitter.dim_48x48.png)\n- TikTok platform icon in a warm coral color scheme on transparent background (icon-tiktok.dim_48x48.png)\n- Minimalist clothing hanger logo mark in coral on dark background (brand-logo.dim_128x128.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-a-brand-profile-setup-page-where-the-user-can-input-their-clothing-brand-identity-brand-name-logo-upload-brand-tone-voice-e-g-casual-luxury-streetwear-target-audience-and-a-simple-product-catalog-product-name-category-description-store-this-profile-data-in-the-backend",
+      "title": "Create a brand profile setup page where the user can input their clothing brand identity: brand name, logo upload, brand tone/voice (e.g., casual, luxury, streetwear), target audience, and a simple product catalog (product name, category, description). Store this profile data in the backend.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-ai-content-generation-page-where-users-can-select-a-product-from-their-catalog-choose-a-target-platform-instagram-facebook-twitter-x-tiktok-and-generate-a-simulated-ai-crafted-social-media-post-including-a-caption-and-relevant-hashtags-simulate-ai-generation-with-template-based-logic-in-the-backend-using-brand-tone-and-product-details",
+      "title": "Build an AI content generation page where users can select a product from their catalog, choose a target platform (Instagram, Facebook, Twitter/X, TikTok), and generate a simulated AI-crafted social media post including a caption and relevant hashtags. Simulate AI generation with template-based logic in the backend using brand tone and product details.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-a-content-scheduling-system-with-a-calendar-view-users-can-assign-generated-or-manually-written-posts-to-specific-dates-and-times-for-each-platform-store-scheduled-posts-in-the-backend-with-status-draft-scheduled-or-published",
+      "title": "Implement a content scheduling system with a calendar view. Users can assign generated (or manually written) posts to specific dates and times for each platform. Store scheduled posts in the backend with status: draft, scheduled, or published.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-a-main-dashboard-that-displays-an-analytics-overview-with-simulated-performance-metrics-per-platform-total-posts-published-estimated-reach-engagement-rate-and-top-performing-post-include-platform-filter-tabs-for-instagram-facebook-twitter-x-and-tiktok",
+      "title": "Build a main dashboard that displays an analytics overview with simulated performance metrics per platform: total posts published, estimated reach, engagement rate, and top-performing post. Include platform filter tabs for Instagram, Facebook, Twitter/X, and TikTok.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-bold-fashion-forward-visual-theme-throughout-the-entire-app-use-a-dark-neutral-base-near-black-or-deep-charcoal-with-a-warm-accent-color-coral-terracotta-or-amber-clean-sans-serif-typography-and-generous-whitespace-the-layout-should-feel-like-a-premium-saas-tool-for-creative-brand-owners-enforce-this-theme-consistently-across-all-pages-and-components",
+      "title": "Apply a bold, fashion-forward visual theme throughout the entire app. Use a dark neutral base (near-black or deep charcoal) with a warm accent color (coral, terracotta, or amber), clean sans-serif typography, and generous whitespace. The layout should feel like a premium SaaS tool for creative brand owners. Enforce this theme consistently across all pages and components.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-the-generated-hero-banner-image-and-platform-icons-as-static-assets-from-frontend-public-assets-generated-use-the-hero-banner-on-the-dashboard-header-and-platform-icons-in-the-scheduling-and-analytics-views",
+      "title": "Render the generated hero banner image and platform icons as static assets from frontend/public/assets/generated. Use the hero banner on the dashboard header and platform icons in the scheduling and analytics views.",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "AI-powered content generation for social media posts (captions, hashtags, etc.)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Content scheduling and calendar view for planned posts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Dashboard with analytics and performance metrics for social media posts",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Multi-platform support (Instagram, Facebook, Twitter/X, TikTok)",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Brand profile setup with clothing brand identity, tone, and product catalog",
+      "reqIds": [],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "AI Social Media Content Automation",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

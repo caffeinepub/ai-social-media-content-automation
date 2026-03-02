@@ -1,0 +1,136 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-a-brand-profile-setup-page-where-the-user-can-input-their-clothing-brand-identity-brand-name-logo-upload-brand-tone-voice-e-g-casual-luxury-streetwear-target-audience-and-a-simple-product-catalog-product-name-category-description-store-this-profile-data-in-the-backend",
+      "featureTitle": "Create a brand profile setup page where the user can input their clothing brand identity: brand name, logo upload, brand tone/voice (e.g., casual, luxury, streetwear), target audience, and a simple product catalog (product name, category, description). Store this profile data in the backend.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/Layout.tsx",
+        "frontend/src/components/Navigation.tsx",
+        "frontend/src/pages/BrandProfileSetup.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-ai-content-generation-page-where-users-can-select-a-product-from-their-catalog-choose-a-target-platform-instagram-facebook-twitter-x-tiktok-and-generate-a-simulated-ai-crafted-social-media-post-including-a-caption-and-relevant-hashtags-simulate-ai-generation-with-template-based-logic-in-the-backend-using-brand-tone-and-product-details",
+      "featureTitle": "Build an AI content generation page where users can select a product from their catalog, choose a target platform (Instagram, Facebook, Twitter/X, TikTok), and generate a simulated AI-crafted social media post including a caption and relevant hashtags. Simulate AI generation with template-based logic in the backend using brand tone and product details.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/ContentGenerator.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-a-content-scheduling-system-with-a-calendar-view-users-can-assign-generated-or-manually-written-posts-to-specific-dates-and-times-for-each-platform-store-scheduled-posts-in-the-backend-with-status-draft-scheduled-or-published",
+      "featureTitle": "Implement a content scheduling system with a calendar view. Users can assign generated (or manually written) posts to specific dates and times for each platform. Store scheduled posts in the backend with status: draft, scheduled, or published.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/SchedulePostDialog.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-a-main-dashboard-that-displays-an-analytics-overview-with-simulated-performance-metrics-per-platform-total-posts-published-estimated-reach-engagement-rate-and-top-performing-post-include-platform-filter-tabs-for-instagram-facebook-twitter-x-and-tiktok",
+      "featureTitle": "Build a main dashboard that displays an analytics overview with simulated performance metrics per platform: total posts published, estimated reach, engagement rate, and top-performing post. Include platform filter tabs for Instagram, Facebook, Twitter/X, and TikTok.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/pages/Dashboard.tsx",
+        "frontend/src/utils/analytics.ts"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-bold-fashion-forward-visual-theme-throughout-the-entire-app-use-a-dark-neutral-base-near-black-or-deep-charcoal-with-a-warm-accent-color-coral-terracotta-or-amber-clean-sans-serif-typography-and-generous-whitespace-the-layout-should-feel-like-a-premium-saas-tool-for-creative-brand-owners-enforce-this-theme-consistently-across-all-pages-and-components",
+      "featureTitle": "Apply a bold, fashion-forward visual theme throughout the entire app. Use a dark neutral base (near-black or deep charcoal) with a warm accent color (coral, terracotta, or amber), clean sans-serif typography, and generous whitespace. The layout should feel like a premium SaaS tool for creative brand owners. Enforce this theme consistently across all pages and components.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-render-the-generated-hero-banner-image-and-platform-icons-as-static-assets-from-frontend-public-assets-generated-use-the-hero-banner-on-the-dashboard-header-and-platform-icons-in-the-scheduling-and-analytics-views",
+      "featureTitle": "Render the generated hero banner image and platform icons as static assets from frontend/public/assets/generated. Use the hero banner on the dashboard header and platform icons in the scheduling and analytics views.",
+      "files": [
+        "frontend/src/components/PlatformIcon.tsx",
+        "frontend/src/pages/ContentGenerator.tsx",
+        "frontend/src/pages/Dashboard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

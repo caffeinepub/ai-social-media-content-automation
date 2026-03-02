@@ -1,0 +1,62 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-03-02T02:58:27.959Z",
+  "summary": "The diff implements a comprehensive AI-powered social media content automation system. All six requirements are largely addressed. REQ-1 through REQ-5 are well-covered with backend Motoko actor, frontend pages, and themed components. REQ-6 is partially addressed — the hero banner and brand logo are rendered as static assets, but platform icons use inline SVG from react-icons rather than the specified image files from frontend/public/assets/generated.",
+  "missing_requirements": [
+    {
+      "id": "REQ-6",
+      "requirement": "Platform icons for Instagram, Facebook, Twitter/X, and TikTok should be rendered as static assets from frontend/public/assets/generated (icon-instagram.dim_48x48.png, icon-facebook.dim_48x48.png, icon-twitter.dim_48x48.png, icon-tiktok.dim_48x48.png)",
+      "reason": "The PlatformIcon component uses react-icons (SiInstagram, SiFacebook, SiX, SiTiktok) rather than the generated image files from frontend/public/assets/generated as specified in the build request.",
+      "evidence": [
+        "frontend/src/components/PlatformIcon.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "ProfileSetupModal prompting for a user display name on first login as a separate user profile layer distinct from the brand profile",
+      "reason": "The build request only specifies a brand profile setup page (REQ-1). A separate user profile modal for entering a personal display name was not requested.",
+      "evidence": [
+        "frontend/src/components/ProfileSetupModal.tsx",
+        "frontend/src/App.tsx"
+      ]
+    },
+    {
+      "description": "Delete scheduled post functionality with confirmation dialog",
+      "reason": "REQ-3 specifies creating, scheduling, and status cycling for posts. Deletion of scheduled posts was not mentioned in any requirement or acceptance criterion.",
+      "evidence": [
+        "frontend/src/pages/CalendarPage.tsx",
+        "frontend/src/hooks/useQueries.ts"
+      ]
+    }
+  ],
+  "confidence": 0.78,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Layout.tsx",
+    "frontend/src/components/Navigation.tsx",
+    "frontend/src/components/PlatformIcon.tsx",
+    "frontend/src/components/ProfileSetupModal.tsx",
+    "frontend/src/components/SchedulePostDialog.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/BrandProfileSetup.tsx",
+    "frontend/src/pages/CalendarPage.tsx",
+    "frontend/src/pages/ContentGenerator.tsx",
+    "frontend/src/pages/Dashboard.tsx",
+    "frontend/src/pages/LoginPage.tsx",
+    "frontend/src/utils/analytics.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

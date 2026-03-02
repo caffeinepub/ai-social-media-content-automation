@@ -1,0 +1,18 @@
+{
+  "frontend/src/index.css": "Global CSS with a fashion-forward dark theme using OKLCH color tokens — deep charcoal background, coral/amber accent palette, Inter + Playfair Display typography, and utility classes for gradients and glass-card effects.",
+  "frontend/tailwind.config.js": "Extended Tailwind config with custom coral, amber, and charcoal color palettes, Inter/Playfair Display font families, enhanced border radii, coral glow box shadows, and fade-in/shimmer animations.",
+  "frontend/src/hooks/useQueries.ts": "All React Query hooks for backend operations — user profile (get/save), brand profile (get/create/addProduct), content generation (generatePost), and scheduled posts (get/schedule/updateStatus/delete) with proper cache invalidation.",
+  "frontend/src/utils/analytics.ts": "Utility functions for computing simulated platform analytics metrics (reach, engagement, post counts) from scheduled posts data, plus number formatting and BigInt timestamp conversion helpers.",
+  "frontend/src/components/PlatformIcon.tsx": "Reusable component rendering platform-specific icons (Instagram, Facebook, Twitter/X, TikTok) using react-icons/si with size variants and optional label display.",
+  "frontend/src/components/Navigation.tsx": "Responsive sidebar (desktop) and top bar + drawer (mobile) navigation with links to all pages, user profile display, and login/logout functionality using Internet Identity.",
+  "frontend/src/components/Layout.tsx": "App shell wrapper that renders the Navigation sidebar alongside page content via TanStack Router's Outlet, with responsive padding and the Sonner toast provider.",
+  "frontend/src/components/ProfileSetupModal.tsx": "Modal dialog shown on first login to collect the user's name and save their profile via the backend, preventing flash with proper loading state checks.",
+  "frontend/src/components/SchedulePostDialog.tsx": "Dialog for scheduling a generated post with platform selector, date/time pickers, and a preview of the post content, wired to the schedulePost backend mutation.",
+  "frontend/src/pages/LoginPage.tsx": "Full-screen landing/login page with hero banner, feature highlights grid, and Internet Identity login button — shown to unauthenticated users.",
+  "frontend/src/pages/Dashboard.tsx": "Main dashboard with hero banner, metric cards, platform analytics tabs, and recent activity feed — updated `flex-shrink-0` to `shrink-0` for Tailwind v3 compatibility.",
+  "frontend/src/pages/BrandProfileSetup.tsx": "Brand profile setup page with logo upload, brand name/tone/audience form, and product catalog manager — updated `flex-shrink-0` to `shrink-0` for Tailwind v3 compatibility.",
+  "frontend/src/pages/ContentGenerator.tsx": "AI content generation page with product/platform selectors and post preview — fixed conflicting `border-border border-coral-400/20` by using only `border-coral-400/20` on the generated post card, and updated `flex-shrink-0` to `shrink-0`.",
+  "frontend/src/pages/CalendarPage.tsx": "Content calendar page with list and month-grid views, platform filters, per-post status updates, and delete confirmations — updated all `flex-shrink-0` to `shrink-0` for Tailwind v3 compatibility.",
+  "frontend/src/App.tsx": "Root app component with TanStack Router setup, authentication guard (shows LoginPage for unauthenticated users, ProfileSetupModal for new users), and route tree wiring all four pages under the Layout.",
+  "frontend/index.html": "HTML entry point with updated title and Google Fonts preload for Inter and Playfair Display typefaces."
+}

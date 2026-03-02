@@ -1,0 +1,139 @@
+{
+  "kind": "build_request",
+  "title": "AI-Powered Social Media Content Automation System — Clothing Brand Prototype",
+  "projectName": "StyleFlow AI",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create a brand profile setup page where the user can input their clothing brand identity: brand name, logo upload, brand tone/voice (e.g., casual, luxury, streetwear), target audience, and a simple product catalog (product name, category, description). Store this profile data in the backend.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "AI-Powered Social Media Content Automation System for a Small Clothing Retail Brand"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User can fill out and save a brand profile form with name, tone, audience, and product catalog entries",
+        "Brand profile data is persisted in the Motoko backend",
+        "Saved profile data loads correctly on return visits"
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Build an AI content generation page where users can select a product from their catalog, choose a target platform (Instagram, Facebook, Twitter/X, TikTok), and generate a simulated AI-crafted social media post including a caption and relevant hashtags. Simulate AI generation with template-based logic in the backend using brand tone and product details.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "AI-powered content generation for social media posts (captions, hashtags, etc.)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "User can select a product and a platform to generate a post",
+        "Generated output includes a caption and hashtags tailored to the selected platform's character/style conventions",
+        "Brand tone from the profile influences generated content",
+        "Generated posts can be saved for scheduling"
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Implement a content scheduling system with a calendar view. Users can assign generated (or manually written) posts to specific dates and times for each platform. Store scheduled posts in the backend with status: draft, scheduled, or published.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Content scheduling and calendar view for planned posts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Calendar view displays scheduled posts grouped by date",
+        "User can assign a post to a date, time, and platform",
+        "Post status cycles through draft → scheduled → published",
+        "Scheduled posts are persisted and retrievable from the backend"
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Build a main dashboard that displays an analytics overview with simulated performance metrics per platform: total posts published, estimated reach, engagement rate, and top-performing post. Include platform filter tabs for Instagram, Facebook, Twitter/X, and TikTok.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ],
+        "quotes": [
+          "Dashboard with analytics and performance metrics for social media posts",
+          "Multi-platform support (Instagram, Facebook, Twitter/X, TikTok)"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Dashboard is the default landing page after login",
+        "Simulated metrics are shown per platform with platform filter tabs",
+        "At least 4 metric cards are displayed (posts, reach, engagement, top post)",
+        "A recent activity feed shows the last 5 scheduled or published posts"
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Apply a bold, fashion-forward visual theme throughout the entire app. Use a dark neutral base (near-black or deep charcoal) with a warm accent color (coral, terracotta, or amber), clean sans-serif typography, and generous whitespace. The layout should feel like a premium SaaS tool for creative brand owners. Enforce this theme consistently across all pages and components.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages share the same color palette and typography",
+        "Dark base background with warm accent colors is applied site-wide",
+        "Navigation sidebar or top bar is present on all authenticated pages",
+        "The design feels polished and appropriate for a fashion/retail brand tool"
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Render the generated hero banner image and platform icons as static assets from frontend/public/assets/generated. Use the hero banner on the dashboard header and platform icons in the scheduling and analytics views.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Hero banner image is displayed in the dashboard header section",
+        "Platform icons for Instagram, Facebook, Twitter/X, and TikTok are displayed consistently wherever platforms are referenced"
+      ]
+    }
+  ],
+  "constraints": [
+    "No real social media API integrations — all platform publishing is simulated/prototype only",
+    "No real AI/LLM calls — content generation must be simulated using template-based logic in Motoko",
+    "All state must be stored in the Motoko single-actor backend",
+    "Do not modify any files listed in frontend.immutablePaths"
+  ],
+  "nonGoals": [
+    "Actual OAuth connection to Instagram, Facebook, Twitter/X, or TikTok APIs",
+    "Real AI/ML model integration or external API calls to LLMs",
+    "Payment or subscription billing",
+    "Multi-user team collaboration",
+    "Image generation for social media posts",
+    "Mobile app or PWA"
+  ],
+  "imageRequirements": {
+    "required": [
+      "Bold fashion-forward hero banner with dark charcoal background, warm coral/terracotta abstract shapes, and subtle clothing silhouettes (hero-banner.dim_1200x400.png)",
+      "Instagram platform icon in a warm coral color scheme on transparent background (icon-instagram.dim_48x48.png)",
+      "Facebook platform icon in a warm amber color scheme on transparent background (icon-facebook.dim_48x48.png)",
+      "Twitter/X platform icon in a warm terracotta color scheme on transparent background (icon-twitter.dim_48x48.png)",
+      "TikTok platform icon in a warm coral color scheme on transparent background (icon-tiktok.dim_48x48.png)",
+      "Minimalist clothing hanger logo mark in coral on dark background (brand-logo.dim_128x128.png)"
+    ],
+    "edits": []
+  }
+}

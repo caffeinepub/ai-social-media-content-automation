@@ -1,0 +1,186 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "StyleFlow AI - Social Media Automation Frontend",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create brand profile setup page for clothing brand identity input with logo upload and product catalog management",
+      "acceptanceCriteria": [
+        "User can fill out and save a brand profile form with name, tone, audience, and product catalog entries",
+        "Brand profile data is persisted in the Motoko backend",
+        "Saved profile data loads correctly on return visits"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useBrandProfile.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for brand profile operations: useGetBrandProfile (query), useCreateBrandProfile (mutation), and useAddProduct (mutation). Use the authorization component's pattern for handling authenticated state. Use the blob-storage component's ExternalBlob class for logo file handling with upload progress tracking. Verify the blob-storage component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/BrandProfileSetup.tsx",
+          "operation": "create",
+          "description": "Create brand profile setup page with form fields for brand name, tone/voice dropdown (casual, luxury, streetwear), target audience text input, and logo file upload using ExternalBlob.fromBytes. Include a product catalog section with add/remove product functionality (name, category, description). Integrate useBrandProfile hooks for data persistence. Use shadcn/ui form components and display upload progress for logo. Reference generated brand logo at frontend/public/assets/generated/brand-logo.dim_128x128.png as a placeholder or preview."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /brand-profile using React Router. Wire BrandProfileSetup page into the routing structure with authentication guard ensuring only logged-in users can access it."
+        },
+        {
+          "path": "frontend/src/components/Navigation.tsx",
+          "operation": "create",
+          "description": "Create navigation sidebar or top bar component with links to Dashboard, Brand Profile, Content Generator, and Calendar. Include the LoginButton component and display the current user's name from their profile. Apply the dark theme styling with warm accent colors."
+        },
+        {
+          "path": "frontend/src/components/Layout.tsx",
+          "operation": "create",
+          "description": "Create layout wrapper component that includes Navigation and wraps page content. Apply consistent padding, dark background, and ensure the fashion-forward theme is applied to the layout structure."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Build AI content generation page for simulated social media post creation with platform selection",
+      "acceptanceCriteria": [
+        "User can select a product and a platform to generate a post",
+        "Generated output includes a caption and hashtags tailored to the selected platform's character/style conventions",
+        "Brand tone from the profile influences generated content",
+        "Generated posts can be saved for scheduling"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useContentGeneration.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for content generation: useGeneratePost mutation that calls backend generatePost method with brandId, productIdx, and platform parameters. Include useSchedulePost mutation for saving generated posts to the schedule."
+        },
+        {
+          "path": "frontend/src/pages/ContentGenerator.tsx",
+          "operation": "create",
+          "description": "Create content generation page with product dropdown (populated from brand profile catalog), platform selector (Instagram, Facebook, Twitter/X, TikTok with icons from frontend/public/assets/generated/icon-instagram.dim_48x48.png, frontend/public/assets/generated/icon-facebook.dim_48x48.png, frontend/public/assets/generated/icon-twitter.dim_48x48.png, frontend/public/assets/generated/icon-tiktok.dim_48x48.png), generate button, and preview area showing generated caption and hashtags. Include a save-to-schedule button that triggers scheduling flow. Use shadcn/ui components for form controls and cards."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /content-generator using React Router. Wire ContentGenerator page into routing with authentication guard."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Implement content scheduling system with calendar view for managing planned posts across platforms",
+      "acceptanceCriteria": [
+        "Calendar view displays scheduled posts grouped by date",
+        "User can assign a post to a date, time, and platform",
+        "Post status cycles through draft → scheduled → published",
+        "Scheduled posts are persisted and retrievable from the backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useScheduledPosts.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for scheduled posts: useGetScheduledPosts query, useUpdatePostStatus mutation for changing post status, and useDeleteScheduledPost mutation. Handle Time type conversion to/from JavaScript Date objects."
+        },
+        {
+          "path": "frontend/src/pages/Calendar.tsx",
+          "operation": "create",
+          "description": "Create calendar page with month/week view displaying scheduled posts grouped by date. Each post card shows platform icon (using generated assets), caption preview, scheduled time, and status badge. Include controls for updating status (draft/scheduled/published) and deleting posts. Use shadcn/ui calendar or date picker components and cards. Apply platform filter functionality."
+        },
+        {
+          "path": "frontend/src/components/SchedulePostDialog.tsx",
+          "operation": "create",
+          "description": "Create dialog/modal component for scheduling a post with date/time picker and platform selector. Called from ContentGenerator when user saves a generated post. Uses shadcn/ui dialog and date picker components."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for /calendar using React Router. Wire Calendar page into routing with authentication guard."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Build main dashboard with simulated analytics overview and platform performance metrics",
+      "acceptanceCriteria": [
+        "Dashboard is the default landing page after login",
+        "Simulated metrics are shown per platform with platform filter tabs",
+        "At least 4 metric cards are displayed (posts, reach, engagement, top post)",
+        "A recent activity feed shows the last 5 scheduled or published posts"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "create",
+          "description": "Create dashboard page displaying hero banner from frontend/public/assets/generated/hero-banner.dim_1200x400.png in header section. Include platform filter tabs (Instagram, Facebook, Twitter/X, TikTok) using platform icons from generated assets. Display 4 metric cards with simulated data: total posts published, estimated reach, engagement rate, and top-performing post. Add recent activity feed section showing last 5 scheduled/published posts from useGetScheduledPosts. Use shadcn/ui tabs, cards, and badge components."
+        },
+        {
+          "path": "frontend/src/utils/analytics.ts",
+          "operation": "create",
+          "description": "Create utility functions for generating simulated analytics metrics based on scheduled posts data. Calculate metrics per platform (post counts, simulated reach/engagement based on post count and platform). No backend calls needed—compute from frontend data."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add route for / (root) using React Router. Set Dashboard as the default authenticated landing page. Wire Dashboard into routing with authentication guard. Ensure authenticated users land on Dashboard after login."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Apply bold fashion-forward visual theme with dark neutral base and warm accent colors site-wide",
+      "acceptanceCriteria": [
+        "All pages share the same color palette and typography",
+        "Dark base background with warm accent colors is applied site-wide",
+        "Navigation sidebar or top bar is present on all authenticated pages",
+        "The design feels polished and appropriate for a fashion/retail brand tool"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Update global CSS with fashion-forward theme: dark base background (near-black or deep charcoal #1a1a1a), warm accent colors (coral #ff6b6b, terracotta #e76f51, amber #f4a261), clean sans-serif typography (system fonts or Inter), generous whitespace. Override shadcn/ui CSS variables for dark theme. Set body background to dark base color."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind config with custom color palette: dark base (near-black), coral, terracotta, amber as accent colors. Add custom spacing and typography settings for premium SaaS feel. Ensure colors are available as Tailwind utility classes throughout the app."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap authenticated routes with Layout component to ensure Navigation is present on all authenticated pages. Apply consistent dark theme background to the root app container."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Render generated hero banner and platform icons as static assets in dashboard and scheduling views",
+      "acceptanceCriteria": [
+        "Hero banner image is displayed in the dashboard header section",
+        "Platform icons for Instagram, Facebook, Twitter/X, and TikTok are displayed consistently wherever platforms are referenced"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/PlatformIcon.tsx",
+          "operation": "create",
+          "description": "Create reusable PlatformIcon component that accepts platform name prop and renders the corresponding icon from frontend/public/assets/generated/icon-instagram.dim_48x48.png, frontend/public/assets/generated/icon-facebook.dim_48x48.png, frontend/public/assets/generated/icon-twitter.dim_48x48.png, frontend/public/assets/generated/icon-tiktok.dim_48x48.png. Include size variants for different use cases."
+        },
+        {
+          "path": "frontend/src/pages/Dashboard.tsx",
+          "operation": "modify",
+          "description": "Ensure hero banner image from frontend/public/assets/generated/hero-banner.dim_1200x400.png is rendered in the dashboard header section with proper aspect ratio and responsive sizing. Use PlatformIcon component for platform filter tabs."
+        },
+        {
+          "path": "frontend/src/pages/ContentGenerator.tsx",
+          "operation": "modify",
+          "description": "Use PlatformIcon component for platform selector buttons in the content generation interface."
+        },
+        {
+          "path": "frontend/src/pages/Calendar.tsx",
+          "operation": "modify",
+          "description": "Use PlatformIcon component to display platform icons on scheduled post cards in the calendar view."
+        }
+      ]
+    }
+  ]
+}
